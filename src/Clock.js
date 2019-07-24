@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './Clock.css'
+import Button from 'react-bootstrap/Button'
+import FormControl from 'react-bootstrap/FormControl'
 
 export default class Clock extends Component {
   state = {
@@ -37,7 +39,7 @@ export default class Clock extends Component {
     return (
       <div className="container">
         <div>
-          <input
+          <FormControl
             type="number"
             placeholder="Enter Time in Seconds"
             value={this.state.timeStart}
@@ -46,8 +48,8 @@ export default class Clock extends Component {
           Seconds
         </div>
 
-        <button onClick={this.startTimer}>Start</button>
-        <button onClick={this.stopTimer}>Stop</button>
+        <Button onClick={this.startTimer}>Start</Button>
+        <Button onClick={this.stopTimer}>Stop</Button>
         {this.props.formatTime(this.state.seconds)}
       </div>
     )
